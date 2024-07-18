@@ -3,43 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Display Resume</title>
+    <title>Resume Builder</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body class="bg-light">
     <div class="container my-5">
-        <div class="card shadow-sm p-4">
-            <div class="text-center mb-4">
-                <h1>Resume</h1>
-            </div>
-            <div class="mb-3">
-                <h2 class="h5">Name: <span class="font-weight-normal">{{ name }}</span></h2>
-            </div>
-            <div class="mb-3">
-                <h2 class="h5">Email: <span class="font-weight-normal">{{ email }}</span></h2>
-            </div>
-            <hr>
-            <div class="mb-3">
-                <h3>About:</h3>
-                <p>{{ about }}</p>
-            </div>
-            <hr>
-            <div class="mb-3">
-                <h3>College: <span class="font-weight-normal">{{ college }}</span></h3>
-            </div>
-            <hr>
-            <div class="mb-3">
-                <h3>Degree: <span class="font-weight-normal">{{ degree }}</span></h3>
-            </div>
-            <hr>
-            <div class="mb-3">
-                <h3>Project:</h3>
-                <p>{{ project }}</p>
-            </div>
-            <form action="{% url 'download' id=id %}" class="text-center">
-                <button type="submit" class="btn btn-primary">Download Resume</button>
+        <div class="d-flex justify-content-end mb-3">
+            <form action="/resume/logout">
+                <button class="btn btn-danger">Logout</button>
             </form>
         </div>
+        <div class="card p-4 shadow-sm">
+            <h1 class="text-center mb-4">Resume Builder</h1>
+            <form method="post">
+                <input type="hidden" name="csrfmiddlewaretoken" value="cM67wdkJKVZqe6647IwaNG3mzNkTWb9jyyY4RIjtBTKIUgCqGe8hq3aTYHzvau8b">
+                
+
+<div id="div_id_name" class="form-group"> <label for="id_name" class=" requiredField">
+                Name<span class="asteriskField">*</span> </label> <div> <input type="text" name="name" maxlength="100" class="textinput form-control" required id="id_name"> </div> </div> <div id="div_id_email" class="form-group"> <label for="id_email" class=" requiredField">
+                Email<span class="asteriskField">*</span> </label> <div> <input type="email" name="email" maxlength="254" class="emailinput form-control" required id="id_email"> </div> </div> <div id="div_id_about" class="form-group"> <label for="id_about" class=" requiredField">
+                About<span class="asteriskField">*</span> </label> <div> <textarea name="about" cols="40" rows="10" class="textarea form-control" required id="id_about">
+</textarea> </div> </div> <div id="div_id_college" class="form-group"> <label for="id_college" class=" requiredField">
+                College<span class="asteriskField">*</span> </label> <div> <input type="text" name="college" maxlength="20" class="textinput form-control" required id="id_college"> </div> </div> <div id="div_id_degree" class="form-group"> <label for="id_degree" class=" requiredField">
+                Degree<span class="asteriskField">*</span> </label> <div> <input type="text" name="degree" maxlength="20" class="textinput form-control" required id="id_degree"> </div> </div> <div id="div_id_project" class="form-group"> <label for="id_project" class=" requiredField">
+                Project<span class="asteriskField">*</span> </label> <div> <textarea name="project" cols="40" rows="10" class="textarea form-control" required id="id_project">
+</textarea> </div> </div>
+
+                <div class="text-center mt-4">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+        
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
