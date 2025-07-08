@@ -1,15 +1,16 @@
-# ResumeBuilder 📝
+# 📝 ResumeBuilder
 
-ResumeBuilder is a simple Python-based tool that helps users generate professional resumes in PDF format by collecting personal and professional details through a command-line interface.
+ResumeBuilder is a Django-based web application that helps users generate professional resumes in PDF format. Users can enter their personal and professional details via a simple web interface, and the system will generate a downloadable PDF resume using `pdfkit` and `wkhtmltopdf`.
 
 ---
 
 ## 🚀 Features
 
-- CLI-based input system
-- Generates resume in `.pdf` format
-- Stores details like name, contact, experience, education, and skills
-- Easy to customize and expand
+- Web-based form for inputting resume details
+- Generates resume in `.pdf` format using HTML templates
+- Supports sections like name, contact, experience, education, and skills
+- Clean and customizable code structure
+- Lightweight and beginner-friendly
 
 ---
 
@@ -26,10 +27,10 @@ resumebuilder/
 
 ## 🛠️ Tech Stack
 
-- Language: Python
-- Libraries:
-  - `fpdf` (for PDF generation)
-  - `os`, `datetime` (standard libraries)
+- **Framework:** Django
+- **Language:** Python
+- **PDF Generation:** `pdfkit` and `wkhtmltopdf`
+- **Form Styling:** django-crispy-forms, crispy-bootstrap4
 
 ---
 
@@ -42,14 +43,32 @@ git clone https://github.com/muhammeddilshadcv/resumebuilder.git
 cd resumebuilder
 ```
 
-### 2. Install dependencies
+### 2. Create and activate virtual environment
+
+```bash
+python -m venv venv
+.\venv\Scripts\activate  # On Windows
+```
+
+### 3. Install dependencies
 
 ```bash
 pip install fpdf
+pip install -r requirements.txt
 ```
 
-### 3. Run the script
+### 4. Run the development server
 
 ```bash
-python manage.py
+python manage.py runserver
 ```
+Visit http://127.0.0.1:8000/ in your browser to use the resume builder.
+
+
+### ✅ Requirements
+
+- Python 3.x
+- Django
+- pdfkit
+- wkhtmltopdf (installed separately)
+- django-crispy-forms
