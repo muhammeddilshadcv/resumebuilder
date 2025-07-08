@@ -51,5 +51,5 @@ pip install fpdf
 ### 3. Run the script
 
 ```bash
-python resume.py
+python manage.py
 ```
